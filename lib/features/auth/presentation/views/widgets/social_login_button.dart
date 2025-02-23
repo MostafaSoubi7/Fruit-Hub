@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/app_text_style.dart';
+import 'package:svg_flutter/svg.dart';
+
+class SocialLoginButton extends StatelessWidget {
+  const SocialLoginButton({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.onPressed,
+  });
+
+  final String image;
+  final String title;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 56,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(
+              color: Color(0xFFDCDEDE),
+              width: 1,
+            ),
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        onPressed: () {},
+        child: ListTile(
+          visualDensity: const VisualDensity(
+            vertical: VisualDensity.minimumDensity,
+          ),
+          leading: SvgPicture.asset(image),
+          title: Text(
+            title,
+            style: TextStyles.semiBold16,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+    );
+  }
+}
