@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:fruit_hub/core/utils/app_text_style.dart';
 
-import '../sign_up_view.dart';
-
-class DontHaveAnAccountWidget extends StatelessWidget {
-  const DontHaveAnAccountWidget({
+class HaveAnAccountWidget extends StatelessWidget {
+  const HaveAnAccountWidget({
     super.key,
   });
 
@@ -16,7 +14,7 @@ class DontHaveAnAccountWidget extends StatelessWidget {
       TextSpan(
         children: [
           TextSpan(
-            text: 'لا تمتلك حساب؟',
+            text: 'تمتلك حساب بالفعل؟',
             style: TextStyles.semiBold16.copyWith(
               color: const Color(0xFF949D9E),
             ),
@@ -29,9 +27,9 @@ class DontHaveAnAccountWidget extends StatelessWidget {
           TextSpan(
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  Navigator.of(context).pushNamed(SignUpView.routeName);
+                  Navigator.of(context).pop();
                 },
-              text: 'قم بإنشاء حساب',
+              text: 'تسجيل دخول',
               style: TextStyles.semiBold16.copyWith(
                 color: AppColors.primaryColor,
               )),
