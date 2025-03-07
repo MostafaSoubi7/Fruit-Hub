@@ -4,7 +4,7 @@ import 'package:fruit_hub/core/services/shared_preferences_sigletone.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../../../../../core/utils/app_text_style.dart';
-import '../../../../auth/presentation/views/login_view.dart';
+import '../../../../auth/presentation/views/signin_view.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem(
@@ -48,7 +48,7 @@ class PageViewItem extends StatelessWidget {
                   onTap: () {
                     Prefs.setBool(kIsOnBoardingViewSeen, true);
                     Navigator.of(context)
-                        .pushReplacementNamed(LoginView.routeName);
+                        .pushReplacementNamed(SigninView.routeName);
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(16),
