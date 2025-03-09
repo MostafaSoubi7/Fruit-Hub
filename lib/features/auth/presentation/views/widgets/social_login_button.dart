@@ -29,7 +29,7 @@ class SocialLoginButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: ListTile(
           visualDensity: const VisualDensity(
             vertical: VisualDensity.minimumDensity,
