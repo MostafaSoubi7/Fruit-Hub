@@ -40,20 +40,22 @@ class AuthRepoImpl extends AuthRepo {
         userEntity,
       );
     } on CustomException catch (e) {
-      if (user != null) {
-        await firebaseAuthService.deleteUser();
-      }
+      await deleteUser(user);
       return left(ServerFailure(e.message));
     } catch (e) {
-      if (user != null) {
-        await firebaseAuthService.deleteUser();
-      }
+      await deleteUser(user);
       log(
         'Exception in AuthRepoImpl.CreateUserWithEmailAndPassword: ${e.toString()}',
       );
       return left(
         const ServerFailure('لقد حدث خطأ ما. يرجى المحاولة لاحقا'),
       );
+    }
+  }
+
+  Future<void> deleteUser(User? user) async {
+    if (user != null) {
+      await firebaseAuthService.deleteUser();
     }
   }
 
@@ -84,12 +86,19 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    User? user;
     try {
-      var user = await firebaseAuthService.signInWithGoogle();
+      user = await firebaseAuthService.signInWithGoogle();
+
+      var userEntity = UserModel.fromFirebaseUser(user);
+
+      await addUserData(user: userEntity);
       return right(
-        UserModel.fromFirebaseUser(user),
+        userEntity,
       );
     } catch (e) {
+      await deleteUser(user);
+
       log(
         'Exception in AuthRepoImpl.CreateUserWithEmailAndPassword: ${e.toString()}',
       );
@@ -103,12 +112,17 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    User? user;
     try {
-      var user = await firebaseAuthService.signInWithFacebook();
+      user = await firebaseAuthService.signInWithFacebook();
+      var userEntity = UserModel.fromFirebaseUser(user);
+
+      await addUserData(user: userEntity);
       return right(
-        UserModel.fromFirebaseUser(user),
+        userEntity,
       );
     } catch (e) {
+      await deleteUser(user);
       log(
         'Exception in AuthRepoImpl.CreateUserWithEmailAndPassword: ${e.toString()}',
       );
