@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/widgets/search_text_field.dart';
+import 'package:fruit_hub/features/home/presentation/views/widgets/bset_selling_header.dart';
 import 'package:fruit_hub/features/home/presentation/views/widgets/featured_list.dart';
 
 import '../../../../../constants.dart';
@@ -29,6 +30,10 @@ class HomeViewBody extends StatelessWidget {
                   height: 12,
                 ),
                 FeaturedList(),
+                SizedBox(
+                  height: 12,
+                ),
+                BsetSellingHeader(),
               ],
             ),
           ),
