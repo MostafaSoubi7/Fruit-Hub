@@ -30,6 +30,14 @@ class Assets {
   /// assets/images/google_icons.svg
   static const String assetsImagesGoogleIcons = "assets/images/google_icons.svg";
 
+  /// Assets for assetsImagesHome
+  /// assets/images/home.svg
+  static const String assetsImagesHome = "assets/images/home.svg";
+
+  /// Assets for assetsImagesHomeActive
+  /// assets/images/home_active.svg
+  static const String assetsImagesHomeActive = "assets/images/home_active.svg";
+
   /// Assets for assetsImagesLogo
   /// assets/images/logo.svg
   static const String assetsImagesLogo = "assets/images/logo.svg";
@@ -58,6 +66,14 @@ class Assets {
   /// assets/images/plant.svg
   static const String assetsImagesPlant = "assets/images/plant.svg";
 
+  /// Assets for assetsImagesProductActive
+  /// assets/images/product_active.svg
+  static const String assetsImagesProductActive = "assets/images/product_active.svg";
+
+  /// Assets for assetsImagesProducts
+  /// assets/images/products.svg
+  static const String assetsImagesProducts = "assets/images/products.svg";
+
   /// Assets for assetsImagesProfileImage
   /// assets/images/profile_image.png
   static const String assetsImagesProfileImage = "assets/images/profile_image.png";
@@ -66,9 +82,25 @@ class Assets {
   /// assets/images/search.svg
   static const String assetsImagesSearch = "assets/images/search.svg";
 
+  /// Assets for assetsImagesShoppingCart
+  /// assets/images/shopping_cart.svg
+  static const String assetsImagesShoppingCart = "assets/images/shopping_cart.svg";
+
+  /// Assets for assetsImagesShoppingCartActive
+  /// assets/images/shopping_cart_active.svg
+  static const String assetsImagesShoppingCartActive = "assets/images/shopping_cart_active.svg";
+
   /// Assets for assetsImagesSplashBottom
   /// assets/images/splash_bottom.svg
   static const String assetsImagesSplashBottom = "assets/images/splash_bottom.svg";
+
+  /// Assets for assetsImagesUser
+  /// assets/images/user.svg
+  static const String assetsImagesUser = "assets/images/user.svg";
+
+  /// Assets for assetsImagesUserActive
+  /// assets/images/user_active.svg
+  static const String assetsImagesUserActive = "assets/images/user_active.svg";
 
   /// Assets for assetsImagesWatermelonTest
   /// assets/images/watermelon_test.png
