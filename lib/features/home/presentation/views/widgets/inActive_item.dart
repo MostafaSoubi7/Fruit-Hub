@@ -8,6 +8,6 @@ class InActiveItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(flex: 2, child: SvgPicture.asset(image));
+    return SvgPicture.asset(image);
   }
 }
